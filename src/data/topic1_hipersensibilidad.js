@@ -287,3 +287,19 @@ export function getTotalQuestionCount() {
   const caseQs = CLINICAL_CASES.reduce((n, c) => n + c.questions.length, 0)
   return caseQs + FINAL_QUIZ.length
 }
+
+export const RESOURCES = [
+  {
+    id: 'book-1',
+    type: 'book',
+    title: 'Inmunología Celular y Molecular (Abul K. Abbas)',
+    description: 'Capítulo sobre mecanismos de hipersensibilidad y enfermedades inmunitarias.',
+    url: 'https://books.google.com/books?id=b5pNEAAAQBAJ'
+  },
+  {
+    id: 'video-1',
+    type: 'video',
+    title: 'Hipersensibilidad de Gell y Coombs - Explicación Médica',
+    url: 'https://www.youtube.com/embed/14QzE_gW01k' // Generic placeholder ID for educational embed
+  }
+]

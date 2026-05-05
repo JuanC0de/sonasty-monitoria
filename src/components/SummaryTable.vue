@@ -1,5 +1,7 @@
 <script setup>
-import { SUMMARY_ROWS } from '../data/clinicalData'
+const props = defineProps({
+  rows: { type: Array, required: true }
+})
 </script>
 
 <template>
@@ -15,7 +17,7 @@ import { SUMMARY_ROWS } from '../data/clinicalData'
       </thead>
       <tbody>
         <tr
-          v-for="(row, i) in SUMMARY_ROWS"
+          v-for="(row, i) in rows"
           :key="row.tipo"
           class="border-b border-slate-100 last:border-0"
           :class="i % 2 === 1 ? 'bg-slate-50/50' : ''"

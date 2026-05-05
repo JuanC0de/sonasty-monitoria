@@ -1,6 +1,6 @@
 <script setup>
 import { computed } from 'vue'
-import { useActivity } from '../composables/useActivity'
+import { injectActivity } from '../composables/useActivity'
 
 const props = defineProps({
   scope: { type: String, required: true }, // 'case' | 'quiz'
@@ -15,7 +15,7 @@ const {
   verifyQuizQuestion,
   caseMeta,
   quizMeta,
-} = useActivity()
+} = injectActivity()
 
 const meta = computed(() =>
   props.scope === 'case'

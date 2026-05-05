@@ -1,30 +1,26 @@
-import { computed, reactive } from 'vue'
-import { CLINICAL_CASES, FINAL_QUIZ, getTotalQuestionCount } from '../data/clinicalData'
+import { computed, reactive, inject, provide } from 'vue'
 import { evaluateMultiselect } from '../utils/answerValidation'
 
 function caseKey(caseId, questionId) {
   return `c:${caseId}:${questionId}`
 }
 
-/**
- * Estado global de la actividad (frontend only).
- * selections: opción id[] por pregunta
- * verified: si ya se pulsó "Comprobar"
- * outcomes: resultado tras verificar (solo lectura pedagógica)
- */
-const activity = reactive({
-  selections: {},
-  verified: {},
-  outcomes: {},
-})
+function createActivityStore(topicData) {
+  const activity = reactive({
+    selections: {},
+    verified: {},
+    outcomes: {},
+  })
 
-function ensureSelectionArray(key) {
-  if (!activity.selections[key]) activity.selections[key] = []
-  return activity.selections[key]
-}
+  function ensureSelectionArray(key) {
+    if (!activity.selections[key]) activity.selections[key] = []
+    return activity.selections[key]
+  }
 
-export function useActivity() {
-  const totalItems = getTotalQuestionCount()
+  const totalItems = computed(() => {
+    if (!topicData || !topicData.value) return 0
+    return topicData.value.getTotalQuestionCount()
+  })
 
   function selectionFor(caseId, questionId) {
     return activity.selections[caseKey(caseId, questionId)] || []
@@ -87,21 +83,22 @@ export function useActivity() {
   }
 
   function resetAll() {
-    activity.selections = {}
-    activity.verified = {}
-    activity.outcomes = {}
+    for (const key in activity.selections) delete activity.selections[key]
+    for (const key in activity.verified) delete activity.verified[key]
+    for (const key in activity.outcomes) delete activity.outcomes[key]
   }
 
   const correctCount = computed(() => {
+    if (!topicData || !topicData.value) return 0
     let n = 0
-    for (const c of CLINICAL_CASES) {
+    for (const c of topicData.value.CLINICAL_CASES || []) {
       for (const q of c.questions) {
         const key = caseKey(c.id, q.id)
         if (!activity.verified[key]) continue
         if (activity.outcomes[key]) n++
       }
     }
-    for (const q of FINAL_QUIZ) {
+    for (const q of topicData.value.FINAL_QUIZ || []) {
       const key = `q:${q.id}`
       if (!activity.verified[key]) continue
       if (activity.outcomes[key]) n++
@@ -110,13 +107,14 @@ export function useActivity() {
   })
 
   const verifiedCount = computed(() => {
+    if (!topicData || !topicData.value) return 0
     let n = 0
-    for (const c of CLINICAL_CASES) {
+    for (const c of topicData.value.CLINICAL_CASES || []) {
       for (const q of c.questions) {
         if (activity.verified[caseKey(c.id, q.id)]) n++
       }
     }
-    for (const q of FINAL_QUIZ) {
+    for (const q of topicData.value.FINAL_QUIZ || []) {
       if (activity.verified[`q:${q.id}`]) n++
     }
     return n
@@ -137,4 +135,18 @@ export function useActivity() {
     correctCount,
     verifiedCount,
   }
+}
+
+export const ACTIVITY_INJECTION_KEY = Symbol('ActivityStore')
+
+export function provideActivity(topicData) {
+  const store = createActivityStore(topicData)
+  provide(ACTIVITY_INJECTION_KEY, store)
+  return store
+}
+
+export function injectActivity() {
+  const store = inject(ACTIVITY_INJECTION_KEY)
+  if (!store) throw new Error('useActivity debe ser usado dentro de un proveedor de actividad.')
+  return store
 }

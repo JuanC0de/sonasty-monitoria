@@ -1,13 +1,21 @@
 <script setup>
-const links = [
-  { id: 'inicio', label: 'Inicio' },
-  { id: 'tipo-i', label: 'Tipo I' },
-  { id: 'tipo-ii', label: 'Tipo II' },
-  { id: 'tipo-iii', label: 'Tipo III' },
-  { id: 'tipo-iv', label: 'Tipo IV' },
-  { id: 'tabla', label: 'Tabla comparativa' },
-  { id: 'quiz', label: 'Quiz final' },
-]
+import { computed } from 'vue'
+
+const props = defineProps({
+  cases: { type: Array, required: true }
+})
+
+const links = computed(() => {
+  const base = [{ id: 'inicio', label: 'Inicio' }]
+  const caseLinks = props.cases.map(c => ({ id: `caso-${c.id}`, label: c.shortLabel }))
+  return [
+    ...base,
+    ...caseLinks,
+    { id: 'tabla', label: 'Tabla comparativa' },
+    { id: 'quiz', label: 'Quiz final' },
+    { id: 'recursos', label: 'Recursos' },
+  ]
+})
 </script>
 
 <template>
