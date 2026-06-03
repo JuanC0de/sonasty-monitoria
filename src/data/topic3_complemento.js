@@ -202,28 +202,28 @@ export const RESOURCES = [
   {
     id: 'link-1',
     type: 'book',
-    title: 'Immunomedia - Sistema del Complemento',
-    description: 'Material complementario en PDF sobre la cascada del complemento.',
-    url: 'https://immunomedia.org/wp-content/uploads/2018/02/immunomedia11complemento1.pdf'
+    title: 'The Complement System and Innate Immunity — Janeway’s Immunobiology (NCBI)',
+    description: 'Las tres vías de activación y la generación de la C3 convertasa.',
+    url: 'https://www.ncbi.nlm.nih.gov/books/NBK27100/'
   },
   {
     id: 'link-2',
     type: 'book',
-    title: 'Recursos Educativos UNAM - Complemento',
-    description: 'Presentación interactiva sobre activación y regulación.',
-    url: 'https://recursoseducativos.unam.mx/handle/123456789/20641'
+    title: 'Physiology, Complement Cascade — StatPearls (NCBI Bookshelf)',
+    description: 'Cascada completa: convertasas, anafilotoxinas y formación del MAC.',
+    url: 'https://www.ncbi.nlm.nih.gov/books/NBK551511/'
   },
   {
     id: 'link-3',
     type: 'book',
-    title: 'Repositorio Salud UNAM',
-    description: 'Material institucional detallado del sistema de complemento.',
-    url: 'https://repositoriosalud.unam.mx/handle/123456789/139'
+    title: 'The complement system: history, pathways, cascade and inhibitors (PMC)',
+    description: 'Revisión detallada de vías, reguladores e inhibidores del complemento.',
+    url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC3956958/'
   },
   {
     id: 'video-3',
     type: 'video',
-    title: 'Sistema del Complemento - Inmunología',
+    title: 'Sistema del Complemento — Inmunología',
     url: 'https://www.youtube.com/embed/l4eaMlZqISc'
   }
 ]

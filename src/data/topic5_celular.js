@@ -202,15 +202,22 @@ export const RESOURCES = [
   {
     id: 'link-1',
     type: 'book',
-    title: 'Clase 5 - Linfocitos B e Inmunología',
-    description: 'Presentación esquemática sobre CMH, linfocitos B y maduración celular.',
-    url: 'https://es.slideshare.net/slideshow/clase-5complejo-mayor-de-histocompatibilidadlinfocitos-bcomplemento-inmunologia/82166072'
+    title: 'Generation of Lymphocytes in Bone Marrow and Thymus — Immunobiology (NCBI)',
+    description: 'Origen de los linfocitos y selección positiva/negativa en el timo.',
+    url: 'https://www.ncbi.nlm.nih.gov/books/NBK27123/'
   },
   {
     id: 'link-2',
     type: 'book',
-    title: 'Sistema Inmunitario - Algor Education',
-    description: 'Apuntes universitarios sobre inmunidad y biología de los linfocitos.',
-    url: 'https://library.algoreducation.com/es/docs/9273/sistema-inmunitario-biologia-universidad'
+    title: 'The Development and Survival of Lymphocytes — Immunobiology (NCBI)',
+    description: 'Maduración de linfocitos T y B, y establecimiento de la tolerancia.',
+    url: 'https://www.ncbi.nlm.nih.gov/books/NBK10761/'
+  },
+  {
+    id: 'link-3',
+    type: 'book',
+    title: 'Introduction to T and B Lymphocytes (NCBI Bookshelf)',
+    description: 'De la célula madre hematopoyética al timocito y el linfocito maduro.',
+    url: 'https://www.ncbi.nlm.nih.gov/books/NBK459471/'
   }
 ]

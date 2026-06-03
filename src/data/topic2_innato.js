@@ -234,21 +234,28 @@ export const RESOURCES = [
   {
     id: 'link-1',
     type: 'book',
-    title: 'Presentación de Inmunología Innata UMSA',
-    description: 'Material de estudio sobre las células del sistema inmunitario innato.',
-    url: 'https://es.slideshare.net/slideshow/presentacion-de-inmunologia-innata-umsa-pdf/281079867'
+    title: 'Physiology, Immune Response — StatPearls (NCBI Bookshelf)',
+    description: 'Visión general de la respuesta innata: barreras, fagocitos y complemento.',
+    url: 'https://www.ncbi.nlm.nih.gov/books/NBK539801/'
   },
   {
     id: 'link-2',
     type: 'book',
-    title: 'Sistema Inmunitario - Algor Education',
-    description: 'Apuntes de Biología a nivel universitario.',
-    url: 'https://library.algoreducation.com/es/docs/9273/sistema-inmunitario-biologia-universidad'
+    title: 'Phagocytosis — StatPearls (NCBI Bookshelf)',
+    description: 'Proceso de fagocitosis paso a paso en macrófagos y neutrófilos.',
+    url: 'https://www.ncbi.nlm.nih.gov/books/NBK556043/'
   },
   {
     id: 'link-3',
     type: 'book',
-    title: 'Inmunopíldoras (SEI)',
+    title: 'Innate Immune System (NCBI Bookshelf)',
+    description: 'Componentes celulares y solubles de la inmunidad innata.',
+    url: 'https://www.ncbi.nlm.nih.gov/books/NBK459455/'
+  },
+  {
+    id: 'link-4',
+    type: 'book',
+    title: 'Inmunopíldoras (SEI, en español)',
     description: 'Recursos educativos de la Sociedad Española de Inmunología.',
     url: 'https://www.inmunologia.org/index.php/educacion-sei/inmunopildoras'
   }

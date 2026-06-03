@@ -10,19 +10,21 @@ defineProps({
 <template>
   <section
     :id="sectionId"
-    class="scroll-mt-24 border-t border-slate-200/80 pt-10 first:border-t-0 first:pt-0"
+    class="scroll-mt-24 border-t border-line pt-10 first:border-t-0 first:pt-0"
   >
-    <header class="mb-5">
-      <p class="text-xs font-semibold uppercase tracking-wide text-primary-600">
-        {{ clinicalCase.typeLabel }}
-      </p>
-      <h2 class="mt-1 text-xl font-bold text-slate-900">{{ clinicalCase.title }}</h2>
+    <header class="mb-5 flex items-center gap-3">
+      <span class="h-9 w-1.5 rounded-full" :style="{ backgroundImage: 'linear-gradient(var(--accent), var(--accent2))' }" />
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-wide" :style="{ color: 'var(--accent)' }">
+          {{ clinicalCase.typeLabel }}
+        </p>
+        <h2 class="font-display mt-0.5 text-xl font-bold text-fg">{{ clinicalCase.title }}</h2>
+      </div>
     </header>
 
-    <article
-      class="rounded-2xl border border-slate-200/90 bg-gradient-to-br from-white to-slate-50/80 p-6 shadow-sm"
-    >
-      <p class="text-sm leading-relaxed text-slate-700">{{ clinicalCase.narrative }}</p>
+    <article class="glass relative overflow-hidden rounded-2xl p-6">
+      <span class="absolute left-0 top-0 h-full w-1" :style="{ background: 'var(--accent)' }" />
+      <p class="text-sm leading-relaxed text-fg-muted">{{ clinicalCase.narrative }}</p>
     </article>
 
     <div class="mt-6 flex flex-col gap-5">

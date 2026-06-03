@@ -290,16 +290,37 @@ export function getTotalQuestionCount() {
 
 export const RESOURCES = [
   {
-    id: 'book-1',
-    type: 'book',
-    title: 'Inmunología Celular y Molecular (Abul K. Abbas)',
-    description: 'Capítulo sobre mecanismos de hipersensibilidad y enfermedades inmunitarias.',
-    url: 'https://books.google.com/books?id=b5pNEAAAQBAJ'
-  },
-  {
     id: 'video-1',
     type: 'video',
-    title: 'Hipersensibilidad de Gell y Coombs - Explicación Médica',
-    url: 'https://www.youtube.com/embed/14QzE_gW01k' // Generic placeholder ID for educational embed
+    title: 'Hypersensitivity — los 4 tipos explicados (animación, Alila Medical Media)',
+    url: 'https://www.youtube.com/embed/jXTW4F-8jd4'
+  },
+  {
+    id: 'src-1',
+    type: 'book',
+    title: 'Type I Hypersensitivity Reaction — StatPearls (NCBI Bookshelf)',
+    description: 'Mecanismo IgE, mastocitos y manejo de la reacción inmediata. Actualización vigente.',
+    url: 'https://www.ncbi.nlm.nih.gov/books/NBK560561/'
+  },
+  {
+    id: 'src-2',
+    type: 'book',
+    title: 'Type II Hypersensitivity Reaction — StatPearls (NCBI Bookshelf)',
+    description: 'Reacción citotóxica mediada por IgG/IgM y complemento.',
+    url: 'https://www.ncbi.nlm.nih.gov/books/NBK563264/'
+  },
+  {
+    id: 'src-3',
+    type: 'book',
+    title: 'Type III Hypersensitivity Reaction — StatPearls (NCBI Bookshelf)',
+    description: 'Complejos inmunes, enfermedad del suero y glomerulonefritis.',
+    url: 'https://www.ncbi.nlm.nih.gov/books/NBK559122/'
+  },
+  {
+    id: 'src-4',
+    type: 'book',
+    title: 'Hypersensitivity Reactions — tabla comparativa (Geeky Medics)',
+    description: 'Comparación clara de los tipos I–IV con ejemplos clínicos.',
+    url: 'https://geekymedics.com/hypersensitivity-reactions/'
   }
 ]

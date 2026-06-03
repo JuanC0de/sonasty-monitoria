@@ -20,19 +20,26 @@ const links = computed(() => {
 
 <template>
   <nav
-    class="sticky top-6 flex flex-col gap-0.5 text-sm"
+    class="sticky top-24 flex flex-col gap-0.5 text-sm"
     aria-label="Secciones"
   >
-    <p class="mb-2 px-3 text-xs font-semibold uppercase tracking-wide text-slate-400">
+    <p class="mb-2 px-3 text-xs font-semibold uppercase tracking-wide text-fg-dim">
       Contenido
     </p>
     <a
       v-for="l in links"
       :key="l.id"
       :href="`#${l.id}`"
-      class="rounded-lg px-3 py-2 font-medium text-slate-600 transition hover:bg-primary-50 hover:text-primary-700"
+      class="nav-link rounded-lg px-3 py-2 font-medium text-fg-muted transition hover:text-fg"
     >
       {{ l.label }}
     </a>
   </nav>
 </template>
+
+<style scoped>
+.nav-link:hover {
+  background-color: color-mix(in oklab, var(--accent) 14%, transparent);
+  color: var(--accent);
+}
+</style>

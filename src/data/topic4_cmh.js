@@ -191,15 +191,22 @@ export const RESOURCES = [
   {
     id: 'link-1',
     type: 'book',
-    title: 'Curso Inmunología - Presentación Antigénica',
-    description: 'Diapositivas y esquemas detallados de procesamiento.',
-    url: 'https://es.slideshare.net/slideshow/curso-inmunologia-09presentacion-antigenica/45176989?nway-content_model'
+    title: 'Antigen Presentation to T Lymphocytes — Janeway’s Immunobiology (NCBI)',
+    description: 'Vías de procesamiento de CMH I (citosol) y CMH II (vesículas).',
+    url: 'https://www.ncbi.nlm.nih.gov/books/NBK10766/'
   },
   {
     id: 'link-2',
     type: 'book',
-    title: 'Inmunología de Rojas (17a Edición)',
-    description: 'PDF del libro completo con capítulos esenciales de CMH y antígenos.',
+    title: 'MHC: Antigen Processing and Presentation (NCBI Bookshelf)',
+    description: 'HLA I/II, cadena invariante, CLIP y el papel de HLA-DM.',
+    url: 'https://www.ncbi.nlm.nih.gov/books/NBK459467/'
+  },
+  {
+    id: 'link-3',
+    type: 'book',
+    title: 'Inmunología de Rojas (17.ª edición, en español)',
+    description: 'PDF con capítulos de CMH y presentación antigénica.',
     url: 'https://transparente.med.ucc.edu.ar/wp-content/uploads/2020/09/Inmunologia_de_Rojas_17e_20190612_116259.pdf'
   }
 ]

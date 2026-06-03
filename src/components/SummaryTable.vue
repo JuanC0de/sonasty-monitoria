@@ -5,27 +5,27 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-sm">
+  <div class="glass overflow-x-auto rounded-2xl">
     <table class="w-full min-w-[640px] border-collapse text-left text-sm">
       <thead>
-        <tr class="border-b border-slate-200 bg-slate-50/90">
-          <th class="px-4 py-3 font-semibold text-slate-800">Tipo</th>
-          <th class="px-4 py-3 font-semibold text-slate-800">Tiempo típico</th>
-          <th class="px-4 py-3 font-semibold text-slate-800">Inmunidad mediada</th>
-          <th class="px-4 py-3 font-semibold text-slate-800">Ejemplos clínicos</th>
+        <tr class="border-b border-line-strong bg-ink-850/60">
+          <th class="px-4 py-3 font-semibold text-fg">Tipo</th>
+          <th class="px-4 py-3 font-semibold text-fg">Tiempo típico</th>
+          <th class="px-4 py-3 font-semibold text-fg">Inmunidad mediada</th>
+          <th class="px-4 py-3 font-semibold text-fg">Ejemplos clínicos</th>
         </tr>
       </thead>
       <tbody>
         <tr
           v-for="(row, i) in rows"
           :key="row.tipo"
-          class="border-b border-slate-100 last:border-0"
-          :class="i % 2 === 1 ? 'bg-slate-50/50' : ''"
+          class="border-b border-line last:border-0 transition-colors hover:bg-ink-800/50"
+          :class="i % 2 === 1 ? 'bg-ink-850/30' : ''"
         >
-          <td class="px-4 py-3 font-medium text-primary-700">{{ row.tipo }}</td>
-          <td class="px-4 py-3 text-slate-700">{{ row.tiempo }}</td>
-          <td class="px-4 py-3 text-slate-700">{{ row.inmunidad }}</td>
-          <td class="px-4 py-3 text-slate-700">{{ row.ejemplo }}</td>
+          <td class="px-4 py-3 font-semibold" :style="{ color: 'var(--accent)' }">{{ row.tipo }}</td>
+          <td class="px-4 py-3 text-fg-muted">{{ row.tiempo }}</td>
+          <td class="px-4 py-3 text-fg-muted">{{ row.inmunidad }}</td>
+          <td class="px-4 py-3 text-fg-muted">{{ row.ejemplo }}</td>
         </tr>
       </tbody>
     </table>
